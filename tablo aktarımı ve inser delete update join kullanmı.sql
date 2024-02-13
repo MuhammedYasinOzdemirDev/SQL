@@ -1,0 +1,2 @@
+insert into northwind.employee_performans(employee_id,fullname,email,satis_adedi)
+select e.id,concat(e.first_name," ",last_name) as fullname,e.email_address,count(o.id) from employees e left join orders o on e.id=o.employee_id group by e.id

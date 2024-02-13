@@ -1,0 +1,35 @@
+-- Veri tabanindan cekme
+-- select * from veritabani.product hepsini alir
+-- select  name from veritabani.product ismi alir sadece
+--  select name,price from veritabani.product
+-- isim değitirerek tabloya cekme
+-- select name as productname,price as fiyat from veritabani.product -- as ile isim değiştirlir
+-- Where kosul işlemleri
+-- select * from veritabani.product where id=1 id si 1 olan gelir
+-- select * from veritabani.product where price<5000 fiyat 5000 den kucukler
+ -- select * from veritabani.product where price<5000 and price >2000 2000 ve 5000 arasi
+ -- select * from veritabani.product where price<5000 and price >=2000 = dolayı 2000 den dahild edilir
+--  select * from veritabani.product where id=1 or id=2 veya ile 1 ve 2 id alınır devam edilebilir
+-- select * from veritabani.product where name="Muhammed" Muhammed ismini tam tutması lazım bulur
+--  select * from veritabani.product where Not name="Muhammed"Muhammed Hariç bulur
+-- select * from veritabani.product where name="Yasin" and price=2000 fiyata gor bulur
+-- select * from veritabani.product where name="Yasin" and (price=2000 or  price=3000) iki secenek sunulur
+-- Operatorler
+-- Between arasında 
+-- select * from veritabani.product where price Between 2000 and 4000 2000 4000 arası kayıtlaro getiti ikiside dahil
+-- select * from veritabani.product where id between 1 and 3 1 ve 3 id arasını alır
+-- select * from veritabani.product where id not between 1 and 3 1 ve 3 arası hariç alir
+-- In string degerleri filterelr
+-- select * from veritabani.product where category IN ("telefon") telefona gore filtreler
+-- select * from veritabani.product where category IN ("telefon","pc") birden fazla girilebilir
+-- select * from veritabani.product where category not IN ("telefon") telefon haric getirir
+-- Like Arama
+-- select * from veritabani.product where name like "%n%" % arsaina yazilirsa aranana karakter veya metini arar
+-- select * from veritabani.product where name like "%n" sonda % işaret olmamaması sonu n ile biten basi onemli değil
+-- select * from veritabani.product where name like "n%" n ile baslyana
+-- select * from veritabani.product where name like "%n%" n ile baslayan ve biten yani n harfini arar tam eşleşme bu
+-- select * from veritabani.product where name like "_a%"_ karekteri temsil eder ikinci karekter a olmalı sonu % dolayı onemli değil
+-- select * from veritabani.product where name like "z_y%" başı z ile başlamali ikinci karekter herşey olabilir 3 karekter y sonrasi onemli değil
+-- select * from veritabani.product where category not like "%pc%" kategory pc olmayan bulur
+-- select * from veritabani.product where category not like "%pc%" and price >2000 iki farklı fitreleme yapılabilri
+-- select * from veritabani.product where aciklama like "evet" or name like "Yasin" iki farkli filtreleme

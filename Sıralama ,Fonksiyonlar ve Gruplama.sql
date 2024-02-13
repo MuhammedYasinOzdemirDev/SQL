@@ -1,0 +1,32 @@
+-- Order Sıralama
+-- select * from veritabani.product order by price fiyata gore sıralar
+-- select * from veritabani.product order by name isme gore varsayılan ASC yani artan sıralanır
+-- select * from veritabani.product order by categor DESC azalan şekilde sıralando
+-- select * from veritabani.product order by category desc,price asc kategori azalan şekilde ilk sıraldı sonra fiyat
+-- Sql fonksiyonlari
+-- select min(price) as "minumum fiyat"from veritabani.product min bulur
+-- select max(price) as "maximum fiyat"from veritabani.product max bulur
+-- select name,price from veritabani.product order by  price limit 1 limitkaç tene getirileciğini belirtir max veya mini bulmanın alternatif yolu
+-- select count(id) as adet from veritabani.product kaç tane oldugunu bulur
+-- select avg(price) as ortalama from veritabani.product ortalama alır
+-- select sum(price) as ortalama from veritabani.product toplam alır
+-- select sum(price*stock) as ortalama from veritabani.product stock ile çarparak toplar
+-- String fonskiyonları
+-- select length("Muhammed Yasin") as karaktersayisi
+-- select length(name) as "Uzunluk"  from veritabani.product
+-- select name,left(name,3)  from veritabani.product soldan 3 karekter alır
+-- select name,concat(left(name,3),"...")  from veritabani.product concat birleştirir
+-- select name,right(name,3)  from veritabani.product sağdan 3 karekter alır
+-- select name,lower(name),replace(name,"e","a"),upper(replace(name,"e","a")) from veritabani.product
+-- lower kucultur upper buyutur replace string,eski, yeni
+-- select trim("      Muhammed Yasin    ") as name bosluklari siler
+-- Gruplama 
+-- select distinct category from veritabani.product tekrar edenleri yok eder veri tutmaz
+-- select category from veritabani.product group by category buda tekrar edenleri filtereler arka planda liste olusturur
+-- select category,count(*) from veritabani.product group by category her kategori adetini yanında yazar
+-- select category,sum(price) from veritabani.product group by category her kategoriye ait toplamları bulur
+-- select category,Avg(price) from veritabani.product group by categoryortalamalari bulunur her grubun
+ -- select category,Avg(price) from veritabani.product where price >2000 group by category  fiyatı 2000 ustundekileri dahil eder
+  -- select category,Avg(price) from veritabani.product group by category having count(*)>2 eleman sayisi 2 den fazla olan gruplari getirir
+  -- having grup filtrelemesi yapar
+  -- select category,avg(price) from veritabani.product group by category having avg(price)>4000 gruplardan 4000 uzeri ortalamayi siralar
